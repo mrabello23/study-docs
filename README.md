@@ -43,6 +43,7 @@
 - https://github.com/Sairyss/domain-driven-hexagon
 - https://github.com/sindresorhus/awesome
 - https://github.com/mhadidg/software-architecture-books
+- https://github.com/mrabello23/desenho-solucao
 
 > Javascript / Nodejs
 
@@ -65,6 +66,8 @@
 - https://github.com/rodrigobranas/ports_and_adapters_ca_design_patterns_frontend
 - https://github.com/rodrigobranas/layers_with_solid
 - https://github.com/rodrigobranas/ports_and_adapters_clean_code_live
+- https://github.com/mrabello23/ts-project-scaffold
+- https://github.com/mrabello23/social-media-app
 
 # Youtube channels
 
