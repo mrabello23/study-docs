@@ -1,0 +1,25 @@
+Event Sourcing (By Greg Young)
+- Persistir em uma base de dados a sequência de eventos que mudou o estado da entidade ao longo do ciclo de vida
+
+# Comandos
+- Comando: requisição que gera alteração de estado no servidor (efeito colateral permanente)
+- Comando geralmente representado no imperativo, descrevendo algo que vai ou que deve acontecer
+- Conjunto de parâmetros que serão interpretados e pelo agente de execução na camada de dominio
+- Após execução do comando, temos o evento
+
+# Eventos
+- História da entidade dentro do domínio pode ser explicada por uma sequência de eventos
+- Evento: objeto que descreve o que aconteceu com determinada entidade
+- Evento geralmente representado no passado, descrevendo algo que já aconteceu
+- Ciclo de vida da entidade = Stream de eventos
+- Eventos contém informações do que aconteceu e quando
+
+# Vantagens
+- Histórico completo das alterações da entidade
+- Possibilidade de voltar no tempo e saber o estado da entidade em determinado momento
+
+# Características
+- Diretamente relacionado com CQRS, ideia básica de salvar na BD o evento resultante de determinado comando
+- Bases segregadas com o estado atual e o histórico de eventos para ganho de desempenho e possibilidade de re-executar toda sequência de eventos
+- Base que de fonte de eventos (event sourcing) por característica só recebe inclusões (imutável)
+- Para facilitar a retomada de determinada série de eventos pode-se adicionar snapshots (consolidação do estado da entidade) na BD

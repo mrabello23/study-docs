@@ -1,0 +1,98 @@
+- Composto por um ou mais componentes. Qualquer coisa que efetivamente componha o serviço, é um componente;
+- Componentes podem ser servidores, infraestrutura de apoio (como banco de dados ou fila de mensageria) e aplicações que compõe um serviço;
+- Começar sempre pelo monolito até aplicação estar funcional e em produção. Com uma aplicação já funcional, é muito mais fácil identificar os domínios que precisam ser separados e o que não é tão crítico, além de termos mais confiança nas implementações das regras;
+- Cada módulo pode ser separado em um Microsserviço;
+- Bounded context podem virar módulos e consequentemente Microsserviços;
+- Não se deve transformar todos os substativos do sistema em Microsserviços;
+
+## Tipos:
+- Data service ou serviço de dado é um tipo de um serviço que simplesmente vai expor dados, como se fosse uma fina camada antes do seu banco de dados. Então o que ele vai fazer é receber dados e realizar o processamento necessário para manter aqueles dados consistentes;
+- Business service ou serviço de negócio, é um tipo de serviço que além de consumir dados de alguma forma, seja consumindo um data service ou tendo acesso direto ao banco de dados, ele fornece operações mais complexas. Diferente do serviço de dados que só fornece dados e os mantém consistente, o serviço de negócio agrega dados e fornece operações mais complexas;
+- Translation services, são basicamente uma forma de você acessar algum recurso externo, mas mantendo certo controle. Eu posso ter um serviço que a minha aplicação vai consumir esse serviço e esse serviço consome o recurso externo, para termos um maior controle. Se esse serviço externo mudar, eu vou modificar em um local só, então isso é algo existente, algo que podemos implementar;
+- Edge service ou serviço de ponta, é algo que é entregue diretamente para o cliente e pode ter necessidades específicas. Então se existem essas necessidades específicas para clientes específicos, podemos ter um edge service que cada um dos clientes vai consumir e esse edge service vai cuidar dessa necessidade específica, limitando o acesso a dados que precisamos transferir, esse tipo de coisa;
+
+## Serviços de domínio (Data service):
+- Fornece acesso a um único domínio da aplicação com as regras contidas;
+- Modelar domínio sem pensar na persintência;
+- Avaliar quais ações (públicas) serão disponibilizadas;
+- Contruir o serviço pensando primeiro no contrato;
+
+## Serviço de negócio:
+- Junção de diversos serviços de domínio;
+- Proveem funcionalidade do negócio em alto nível;
+- Permite encapsular domínios relacionados;
+- Passos para criar Serviço de negócio:
+    - Identificar o processo que pretende expor;
+    - Identificar os domínios que serão necessários nesse serviço;
+    - Definir API que será utilizada focando no domínio e não nos dados;
+    - Consumir serviços de domínio (Data service) para executar os processos;
+
+## Estrangulamento do monolito:
+- Strangler pattern;
+- Quebrar um monolito para tirar as funcionalidades;
+- Começar isolando os dados ou isolando os domínios;
+
+## Utilitários comuns a diversos serviços:
+- Sidecar pattern;
+- Contruir módulo compartilhável;
+- Aplicar o "sidecar" nos serviços conforme necessidade;
+
+## API Gateway
+- Ponto único de entrada, que organiza o fluxo de acessos;
+- Fornece um proxy(Façade) para as necessidades reais;
+- Autorizar e redirecionar requests, adicionar informações necessarias (Decorator), limitar acessos ou conteúdo trafegado;
+- Dessa forma podemos ter controles de acesso unificados, autenticação em ponto único, etc. Mas essa também é a principal desvantagem: o ponto único de falha;
+
+## Edge Pattern
+- Gateway específico para determinado cliente;
+- Foco nas necessidades reais de determinados cientes;
+- Contruindo um edge service: Identificar o cliente e suas necessidades, constuir contratos específicos para o cliente, modificar os dados que são transferidos para garantir a otimização do processo;
+- Existem casos onde são usados apenas Edge services e não Gateways;
+- Se seu aplicativo móvel precisa de menos dados que a aplicação web, um serviço de ponta pode garantir que os dados extra não sejam enviados de forma desnecessária, por exemplo;
+
+## Agregador de processos (Proccess Aggregator Pattern)
+- Serviço de negócio agregam serviços de domínio;
+- Agregador de processos agregam serviços de negócio;
+- Agregadores fazem as chamadas para os serviços necessários e montam as respostas de forma correta;
+- Pode e deve ter uma lógica de processamento;
+- Construindo um agregador: Definir um novo modelo para representar os dados agregados e a partir deste modelo, pensar na API que fornecerá a interface para as operações;
+
+## Dados
+- Ideal é que cada serviço tenha acesso ao próprio banco de dados;
+- Com cada serviço tendo seu próprio banco de dados, a escalabilidade do serviço e bd pode ser feita em conjunto;
+- Single service database: cada serviço (que precisar!) terá seu próprio Banco de Dados;
+- Shared service database: trate o banco em cada serviço como se ele fosse separado;
+
+## CQRS
+- Segregação de responsabilidades entre comandos e buscas, ou escrita e leitura;
+- Read-replica databases: bancos segregados para escrita e leitura, onde a replica de leitura fica mais flexível ao escalonamento horizontal;
+- Auxilia a segregação de operações complexas;
+- Aumenta a complexidade de implementação/gerenciamento do sistema;
+
+## Eventos assíncronos
+- Ideal para cenários onde problemas não podem resolvidos em tempo real;
+- Serviço emite um evento que será tratado em seu devido tempo;
+- Mensagerias (Ex: rabbitMQ) e serviços de stream de dados (Ex: Kafka) ajudam na implementação;
+
+## Logs
+- Através de logs podemos identificar informações valiosas sobre saúde da aplicação;
+- Através de logs conseguimos reproduzir uma execução, permitindo remontar uma "call stack" ou "stack trace", e depurá-la;
+- Serviço exclusivo ou sidecar;
+- Formatos devem ser compartilhados e unificados;
+- Taxonomia deve ser comum entre os serviços;
+- Recomenda-se usar como stream de dados e manter um serviço de agregação para o parsing e categorização corretamente;
+- Todos os logs devem ser agregados em um ponto único de alguma forma;
+- Deve ser possível ratrear chamadas e poder reconstruir uma operação a partir do identificador;
+- Recomenda-se uso de padrões de TraceID e ferramentas de gerenciamento (APM) para visualização;
+
+## Métricas
+- Coletar e principalmente agregar métricas;
+- Não exigem desenvolvimento, apenas configuração e instrumentação;
+- Permitem saber o que está acontecendo com aplicação em determinado momento;
+- Ideal ter dashboards de alto nível para visualização do status da aplicação como um todo;
+- Ideal ter dashboards específicos e detalhados para cada serviço;
+
+## Contratos entre Microsserviços
+- Geralmente APIs
+- Forma de comunicação entre o Microsserviço e seus clientes, que podem ser outros Microsserviços
+- Consistência no contrato: apenas modificações aditivas; versionamento de APIs; manter equipes segregadas como donas de cada serviço;

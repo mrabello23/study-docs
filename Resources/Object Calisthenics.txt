@@ -1,0 +1,19 @@
+Object Calisthenics: Exercício de programação formalizado com um conjunto de 9 regras, sem ordem específica;
+
+- Primeira regra: Nunca use (ou pelo menos evite) getters e setters. Princípio "Tell, Don’t Ask";
+- Segunda regra: Apenas 1 nível de identação por método;
+- Terceira regra: Nunca use ELSE. Técnicas de "Early return" e "Fail fast";
+- Quarta regra: Envolva seus tipos primitivos (caso eles tenham comportamento). Uso de "Value Objects";
+- Quinta regra: Coleções de primeira classe (First Class Collection);
+- Sexta regra: Apenas um operador de acesso a objetos por instrução (Exceto interface fluida);
+- Sétima regra: Nunca abrevie (Métodos, atributos, variáveis, etc);
+- Oitava regra: Mantenha classes e pacotes pequenos;
+- Nona regra: Tenha no máximo 2 propriedades por classe (quando possível);
+
+- Utilizar métodos de acesso a nossas propriedades faz sentido, desde que nós não utilizemos o retorno para tomar decisões que poderiam estar encapsuladas na classe. Evite usar setters sempre que possível. Dessa forma você terá objetos imutáveis, ou seja, que não sofrem alteração. Esta técnica ajuda bastante na previsibilidade de seu código;
+- Extrair métodos é uma refatoração bem conhecida e comum. Com ela nós pegamos um pedaço de código de um método e levamos para outro. No método original passamos a chamar este método extraído. Quando extraímos um pedaço complexo de código para um método, damos nome a este pedaço de código, tornando a leitura mais natural;
+- Utilizar ELSE não é necessário, e parar de usá-lo pode trazer vantagens na legibilidade e manutenibilidade do código. Existe uma métrica muito famosa para saber quão complexo nosso código está, chamada Complexidade Ciclomática. Esse cálculo nos diz quantos possíveis caminhos nosso código pode percorrer. Ao evitar o uso de else, nós escrevemos códigos com uma Complexidade Ciclomática menor, deixando menos "bifurcações" em nosso código, o que facilita a leitura;
+- Encapsular um tipo primitivo (como string) em uma classe específica que contenha suas regras traz vantagens como: Enriquecemos nosso domínio, tornando o código mais expressivo. Trabalhar com domínios ricos é um ponto muito forte no estudo de DDD;
+- Extrair uma nova classe a partir de uma coleção traz vantagens como ganho de expressividade, dessa forma podemos ter métodos específicos para esta coleção. Coleções devem sempre estar encapsuladas em classes específicas para elas;
+- Nomes muito grandes, especialmente de métodos, podem indicar mais de uma responsabilidade. Talvez possamos extrair um método neste cenário;
+- Agrupar propriedades em classes sempre que possível. Quando agrupamos várias propriedades, damos um significado a mais para elas. É muito mais expressivo receber um nome por parâmetro do que 2 strings;

@@ -1,0 +1,13 @@
+- comando query reponsability segregation
+- identificar propósito de cada método
+- separação nos modelos de comando e consulta no implementação dos codigos
+- Comando (Comand): requisição que gera alteração de estado no servidor (efeito colateral permanente)
+- Consulta (Query): faz uma consulta e não altera estados no servidor (sem efeitos colaterais)
+- método nunca deve ser comando e consulta ao mesmo tempo
+- Exemplos de verbos http de Comando: POST, PUT, DELETE
+- Exemplos de verbos http de Consulta: GET
+- Comando é uma estrutura de dados que serve como base para o domínio executar uma operação
+- geralmente as camadas de domínio estão envolvidas com os Comandos
+- qualquer lógica ou processamento no momento da Consulta gera uma restrição de escalabilidade
+- repositórios são serviços de domínio e naturalmente atenderem a stack de Comando
+- greg young diz que não há CQRS sem Event Sourcing

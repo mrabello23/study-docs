@@ -1,0 +1,26 @@
+- padrão criado para suportar transações de longa duração (LLT)
+- trata de consistência de dados entre microsserviços (BD separados)
+- Recomendado para se lidar com operações que envolvam diversos microsserviços + diversos bancos de dados e que precisam apresentar alguma consistência
+- A ideia central é fazer com que cada serviço execute uma operação alterando a base de dados e no final do processo todos vão estar atualizados
+- Caso algumm dos serviços não funcione por algum motivo, o processo é revertido - Ação compensatória
+- Sequência clara de execução, ou seja, não possui condicionais.
+- Sucesso definitivo ou Falha definitiva
+
+# Estratégias de implementação
+
+* Coreografada
+- Cabe a cada serviço avisar ao sucessor que conseguiu completar a opação com sucsso ou ao antecessor avisar que ocorreu falha
+
+* Orquestrada (Saga Execution Coordinator - SEC)
+- Centralizar o gerenciamento de ativação de serviços (se sucesso, vai para frente se falha, volta)
+- Geralmente mais flexível
+- Serve para mostrar detalhes da transação (Pedido já foi separado? Já foi pago? Como está o pedido?)
+- Políticas de timeout
+
+Notificações geradas a partir do serviços
+
+- Comando Separar produto, Evento: Produto Separado (disparado para um recurso de comunição)
+- SEC captura o evento e já sabe o que deve ser feito
+
+Bad Smell
+- Quando muitas SAGAS em um determinado domínio, é um mal cheiro de modelagem de dados.

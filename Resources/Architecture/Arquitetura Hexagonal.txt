@@ -1,0 +1,48 @@
+Arquitetura Hexagonal ou Ports and Adapters (By Alistair Cockburn)
+- criar sistemas desacoplados, tanto na interface com usuário quanto com a BD
+- muito mais um design pattern do que arquitetura
+- ideia de deixar o sistema operante mesmo sem BD e facilitar a conexão com outras aplicações
+- facilitar processos de integração e testes de regressão
+- qualquer INPUT do ambiente externo (usuarios, testes, BD) entra pela Porta
+- qualquer INTERAÇÃO com o ambiente externo é feita pelo adaptador
+- ideia de isolamento das APIs e aplicação em projetos apartados
+
+# Hexagonal
+- ideia de fugir do tradicional desenho em camadas verticais e horizontais
+- evitar que o desenvolvedor tenha uma visão simplista da arquitetura na implementação do sistema
+- não existe simetria em aplicações complexas e o formato do hexagono tenta exemplificar varias camadas e interfaces
+- exemplifica a ideia de varios adaptadores para diferentes tipos de comportamento para sistemas conectados a mesma porta
+- representação de "Aplicação" no centro do desenho não significa a camada de aplicação do desenho tradicional em camadas
+- "Aplicação" inclui a camada de aplicação e de domínio
+
+# Portas
+- Traduz a interação do ambiente externo para o contexto da aplicação
+- Conecta a aplicação com um agente externo (usuário, outra aplicação, BD, etc..)
+- Implementada como uma abstração (Interface)
+
+# Adaptadores
+- Intaragem com o ambiente externo da aplicação
+- Traduzem o que está acontecendo na aplicação através da Porta com ambiente externo
+- Adaptadores são fiéis a Portas via implementação/consumo de contratos
+- Implementação atende um contexto específico baseado na Porta que vai conectar na aplicação (Ex BD: Sql Server, MongoDB, etc..)
+
+Resumo
+- Para cada porta existe um adapter.
+- Os adapters são responsáveis por traduzir mensagens do mundo externo para algo que seja compreensível dentro da aplicação.
+- Um comando é um objeto auto-contido criado a partir de uma requisição para representar a intenção de um usuário.
+- Um command handler é a parte da aplicação responsável pela manipulação de um comando. Ex: command handler "RegisterPatientHandler" aceita um comando chamado "RegisterPatient".
+- Um command bus pode ser utilizado para distribuir os comandos para seus respectivos handlers.
+- Pode-se utilizar alguma biblioteca para command bus como SimpleBus ou Tactician.
+- Recebe-se uma requisição HTTP através da porta web. A requisição HTTP passará pelas camadas de infraestrutura, aplicação até chegar na camada de domínio.
+- A camada de infraestrutura contém tudo o que é necessário para traduzir a requisição HTTP para algo compreensível pela aplicação. Por exemplo, objetos de Request, Controller e Form.
+- A camada de aplicação contém tudo o que é necessário para realizar ações. Por exemplo, objetos de command e command handler.
+- A camada de domínio contém o domínio da aplicação como entidades e repositórios.
+- Uma entidade, que está na camada de domínio, utiliza um entity manager, que está na camada de infraestrutura, para realizar a persistência utilizando a porta de persistência.
+- O problema é que uma uma camada interna não pode depender de uma camada externa.
+- Para solucionar esse problema utiliza-se o princípio de inversão de dependência.
+- Nesse caso, define-se o repositório como uma interface na camada de domínio e faça a implementação na camada de infraestrutura depender dela.
+- Uma vantagem da utilização dessa abordagem é utilizar uma implementação para testes de banco de dados em memória.
+- A arquitetura hexagonal permite uma melhor separação de responsabilidade com as camadas de core (domínio e aplicação) e infraestrutura.
+- Alguns projetos podem separar os códigos em diretórios de domínio, aplicação e infraestrutura.
+- Códigos que se encontram em controllers podem ser movidos para os command handlers.
+- A arquitetura hexagonal dá suporte para ideias como DDD, TDD, BDD, CQRS e event sourcing.

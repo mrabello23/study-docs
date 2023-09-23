@@ -1,0 +1,20 @@
+https://www.infoq.com/br/articles/C4-architecture-model/
+
+- C4 Model é um combinado de método e linguagem gráfica para representar arquitetura de software, tanto para concepção quanto para documentação.
+- Consiste em um conjunto hierárquico de diagramas de arquitetura de software para contexto, containers, componentes e código.
+- A hierarquia dos diagramas C4 fornece diferentes níveis de abstração, cada um dos quais é relevante para um público diferente.
+- Evite a ambiguidade em seus diagramas incluindo uma quantidade suficiente de texto, bem como uma chave/legenda para a notação utilizada.
+
+O nome C4 vem dos quatro níveis de diagrama propostos por Simon Brown:
+- Contexto
+- Containers
+- Componentes
+- Classes/Código
+
+Todos os níveis estão relacionados: O nível de Containers é derivado do Contexto; Componentes é derivado de Containers; Classes é derivado de Componentes.
+
+A construção dos diagramas conforme prescrito no C4 Model permite que você consiga ter uma linguagem consistente, em quatro níveis de detalhe, conforme a necessidade e o stakeholder.
+
+Para que serve?
+Como já destacado, C4 Model é uma proposta para padronizar de forma coerente e eficiente a representação da arquitetura de um software.
+Os diagramas do C4 Model facilitam a comunicação entre todos os envolvidos no projeto do software.
