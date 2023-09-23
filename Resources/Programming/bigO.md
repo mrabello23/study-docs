@@ -1,0 +1,21 @@
+# Time and Complexity
+
+- Big O notation: how code slows as data grows
+- N: size of input or how much data
+- time complexity (order):
+  - constant time:
+    - running time of a function stay constant even if the size of the input increases
+    - represented by O(1)
+    - T = a
+  - logarithmic time
+    - Logarithms are the mathematical inverse of exponentials
+    - running time of a function grows very slowly as the input size grows
+    - ex: Binary Search (algorithm that is used to search for an element in an ordered set)
+  - linear time:
+    - running time of a function increases as the size of the input increases
+    - represented by O(n)
+    - T = an + b
+  - quadratic time:
+    - running time of a function quadratic increases as the size of the input increases
+    - represented by O(n²)
+    - T = an² + bn + c
