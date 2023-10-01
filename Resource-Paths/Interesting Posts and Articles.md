@@ -1,0 +1,17 @@
+# Interesting Posts / Articles
+
+- [Software-Architecture](https://eminetto.notion.site/eminetto/Software-Architecture-67ede7ea4d034dfcbaee7ce9e3b03ea1)
+- [Ports and Adapters Pattern](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html)
+- [Software Architecture is Overrated, Clear and Simple Design is Underrated](https://blog.pragmaticengineer.com/software-architecture-is-overrated/)
+- [The Software Architecture Chronicles](https://herbertograca.com/2017/07/03/the-software-architecture-chronicles/)
+- [DDD, Hexagonal, Onion, Clean, CQRS, … How I put it all together](https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/)
+- [DDD do jeito certo](https://ddd-do-jeito-certo.online/)
+- [Manual do Arquiteto de Software](https://arquiteturadesoftware.online/)
+- [Big O cheatsheet](https://www.bigocheatsheet.com/)
+- [Fallacies of Distributed Systems](https://architecturenotes.co/fallacies-of-distributed-systems/)
+- [How to handle transactions in Node.js reference architecture](https://developers.redhat.com/articles/2023/07/31/how-handle-transactions-nodejs-reference-architecture)
+- [Como Atuar com Arquitetura](https://dev.to/zanfranceschi/conceito-como-atuar-com-arquitetura-1a1j)
+- [Top 10 Microservices Design Principles and Best Practices](https://medium.com/javarevisited/10-microservices-design-principles-every-developer-should-know-44f2f69e960f)
+- [Monolithic to Microservices Architecture with Patterns & Best Practices](https://medium.com/design-microservices-architecture-with-patterns/monolithic-to-microservices-architecture-with-patterns-best-practices-a768272797b2)
+- [High-Quality Work in Software Engineering](https://newsletter.techworld-with-milan.com/p/high-quality-work-in-software-engineering)
+- [How modular can your monolith go?](https://microservices.io/post/architecture/2023/07/31/how-modular-can-your-monolith-go-part-1.html)

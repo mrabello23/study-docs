@@ -1,4 +1,4 @@
-# Newsletters
+# Tech Newsletters
 
 - [Dear Architects](https://www.deararchitects.xyz/)
 - [The Pragmatic Engineer](https://newsletter.pragmaticengineer.com/)
@@ -6,7 +6,7 @@
 - [Tech World With Milan](https://newsletter.techworld-with-milan.com/)
 - [ByteByteGo](https://blog.bytebytego.com/)
 
-# Blogs
+# Tech Blogs
 
 - [Medium](https://medium.com/)
 - [Refactoring guru](https://refactoring.guru/refactoring)
@@ -17,20 +17,36 @@
 - [Freecodecamp](https://www.freecodecamp.org/)
 - [dev.to](https://dev.to/)
 - [itnext.io](https://itnext.io/)
-- [herbertograca](https://herbertograca.com/)
-- [architecture notes](https://architecturenotes.co/)
+- [Herbertograca](https://herbertograca.com/)
+- [Architecture notes](https://architecturenotes.co/)
+- [Slack Engineering](https://slack.engineering/)
+- [Stackoverflow Engineering](https://stackoverflow.blog/engineering/)
+- [Engineering at Spotify](https://engineering.atspotify.com/)
+- [Notion Tech](https://www.notion.so/blog/topic/tech)
+- [Twitter Engineering](https://blog.twitter.com/engineering/en_us)
+- [Instagram Engineering](https://instagram-engineering.com/)
+- [Stripe Engineering](https://stripe.com/blog/engineering/)
+- [AWS Geek](https://www.awsgeek.com/)
 
-# Posts / Articles
+# Tech Profiles on LinkedIn
 
-- [Software-Architecture](https://eminetto.notion.site/eminetto/Software-Architecture-67ede7ea4d034dfcbaee7ce9e3b03ea1)
-- [Ports and Adapters Pattern](https://jmgarridopaz.github.io/content/hexagonalarchitecture.html)
-- [Software Architecture is Overrated, Clear and Simple Design is Underrated](https://blog.pragmaticengineer.com/software-architecture-is-overrated/)
-- [The Software Architecture Chronicles](https://herbertograca.com/2017/07/03/the-software-architecture-chronicles/)
-- [DDD, Hexagonal, Onion, Clean, CQRS, … How I put it all together](https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/)
-- [DDD do jeito certo](https://ddd-do-jeito-certo.online/)
-- [Big O cheatsheet](https://www.bigocheatsheet.com/)
-- [Fallacies of Distributed Systems](https://architecturenotes.co/fallacies-of-distributed-systems/)
-- [How to handle transactions in Node.js reference architecture](https://developers.redhat.com/articles/2023/07/31/how-handle-transactions-nodejs-reference-architecture)
+- [Carlos Pisani](https://www.linkedin.com/in/carlospisani)
+- [Lucas Gertel](https://www.linkedin.com/in/lgertel)
+- [Pavan Belagatti](https://www.linkedin.com/in/pavan-belagatti-growthmarketer)
+- [Milan Milanović](https://www.linkedin.com/in/milanmilanovic)
+- [Daniel ABIB](https://www.linkedin.com/in/danielabib)
+- [Yan Cui](https://www.linkedin.com/in/theburningmonk)
+- [Arslan Ahmad](https://www.linkedin.com/in/arslanahmad)
+- [Alex Xu](https://www.linkedin.com/in/alexxubyte)
+- [Slobodan Gajić](https://www.linkedin.com/in/slobodan-gajic)
+- [Luca Mezzalira](https://www.linkedin.com/in/lucamezzalira)
+- [Addy Osmani](https://www.linkedin.com/in/addyosmani)
+- [Ryan Peterman](https://www.linkedin.com/in/ryanlpeterman)
+- [Gergely Orosz](https://www.linkedin.com/in/gergelyorosz)
+- [Jack Herrington](https://www.linkedin.com/in/jherr)
+- [Sai Vennam](https://www.linkedin.com/in/saivennam)
+- [Nik Sumeiko](https://www.linkedin.com/in/niksumeiko)
+- [Steve Sewell](https://www.linkedin.com/in/ssewell)
 
 # Repositories
 
