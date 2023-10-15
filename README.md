@@ -2,9 +2,9 @@
 
 - [Dear Architects](https://www.deararchitects.xyz/)
 - [The Pragmatic Engineer](https://newsletter.pragmaticengineer.com/)
-- [Medium Weekly Digest](https://medium.com/)
 - [Tech World With Milan](https://newsletter.techworld-with-milan.com/)
 - [ByteByteGo](https://blog.bytebytego.com/)
+- [Level Up Software Engineering](https://levelupsoftwareengineering.substack.com/)
 
 # Tech Blogs
 
@@ -34,7 +34,6 @@
 - [Lucas Gertel](https://www.linkedin.com/in/lgertel)
 - [Pavan Belagatti](https://www.linkedin.com/in/pavan-belagatti-growthmarketer)
 - [Milan Milanović](https://www.linkedin.com/in/milanmilanovic)
-- [Daniel ABIB](https://www.linkedin.com/in/danielabib)
 - [Yan Cui](https://www.linkedin.com/in/theburningmonk)
 - [Arslan Ahmad](https://www.linkedin.com/in/arslanahmad)
 - [Alex Xu](https://www.linkedin.com/in/alexxubyte)
@@ -47,6 +46,10 @@
 - [Sai Vennam](https://www.linkedin.com/in/saivennam)
 - [Nik Sumeiko](https://www.linkedin.com/in/niksumeiko)
 - [Steve Sewell](https://www.linkedin.com/in/ssewell)
+- [Dr. Milan Milanović](https://www.linkedin.com/in/milanmilanovic)
+- [Nelson Djalo](https://www.linkedin.com/in/nelsonamigoscode)
+- [Slobodan Gajić](https://www.linkedin.com/in/slobodan-gajic)
+- [Eduardo Matos](https://www.linkedin.com/in/eduardodematos)
 
 # Repositories
 
